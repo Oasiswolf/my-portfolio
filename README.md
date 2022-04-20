@@ -1,5 +1,3 @@
-# React/Redux/Router Starter Project
+# This was built out my Nathan Lamb from OasisWolf Programs!
 
-> Provided for the students of the [Bottega Code School](https://bottega.tech/)
-
-*Fork from [es6-webpack2-starter](https://github.com/micooz/es6-webpack2-starter)*
+Thank you for checking this out and getting to know this person better!
