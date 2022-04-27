@@ -1,23 +1,48 @@
 import React, { Component } from "react";
 import moment from "moment";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import PortFolioContainer from "./portfolio-items/portfolio-container";
 import Navigation from "./navigation/nav";
+import Home from "./pages/home";
+import About from "./pages/about";
+import Contact from "./pages/contact";
+import Blog from "./pages/blog";
+import PortfolioDetail from "./portfolio-items/portfolio-detail";
+import WrongLink from "./pages/wrong-link";
 
 export default class App extends Component {
+	constructor() {
+		super();
+	}
+
 	render() {
 		return (
 			<div className="app">
-				<Navigation />
-				<h1>Portfolio for Nathan Lamb</h1>
-				<div>
-					<h3>{moment().format("MMMM Do YYYY, h:mm:ss a")}</h3>
-				</div>
-				<h2>This Class is Awesome!</h2>
-				<h1>
-					{" "}
-					<PortFolioContainer />{" "}
-				</h1>
+				<Router>
+					<div>
+						<h1>Portfolio for Nathan Lamb</h1>
+						<div>
+							<h3>
+								{moment().format("MMMM Do YYYY, h:mm:ss a")}
+							</h3>
+						</div>
+						<Navigation />
+						<Switch>
+							<Route exact path="/" component={Home} />
+							<Route path="/about" component={About} />
+							<Route path="/contact" component={Contact} />
+							<Route path="/blog" component={Blog} />
+							<Route
+								exact
+								path="/detail/:slug"
+								component={PortfolioDetail}
+							/>
+							<Route component={WrongLink} />
+						</Switch>
+					</div>
+				</Router>
+
+				<h2>The March 7 2022 Class is Awesome!</h2>
 			</div>
 		);
 	}
