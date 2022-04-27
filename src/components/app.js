@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import moment from "moment";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Navigation from "./navigation/nav";
@@ -20,12 +19,6 @@ export default class App extends Component {
 			<div className="app">
 				<Router>
 					<div>
-						<h1>Portfolio for Nathan Lamb</h1>
-						<div>
-							<h3>
-								{moment().format("MMMM Do YYYY, h:mm:ss a")}
-							</h3>
-						</div>
 						<Navigation />
 						<Switch>
 							<Route exact path="/" component={Home} />

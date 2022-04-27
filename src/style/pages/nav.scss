@@ -1,0 +1,62 @@
+.nav-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 25px;
+	padding: 30px;
+	width: 95vw;
+
+	.left-wrapper {
+		display: flex;
+		// justify-content: space-evenly;
+		align-items: center;
+		gap: 5px;
+		padding: 5px 20px;
+		width: 40vw;
+
+		.nav-link {
+			font-family: "Sansita Swashed", cursive;
+			font-size: 1.15em;
+			height: 22px;
+			border-bottom: 1px solid transparent;
+
+			a {
+				color: black;
+				transition: 0.5s ease-in-out;
+				text-decoration: none;
+
+				&:hover {
+					color: lime;
+					border-bottom: 1px solid lime;
+					font-size: 1.25em;
+					background-color: slategray;
+					border-radius: 5px;
+				}
+			}
+			.active {
+				color: lime;
+				border-bottom: 1px solid lime;
+				font-size: 1.25em;
+				background-color: slategray;
+				border-radius: 5px;
+			}
+		}
+	}
+
+	.middle-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 20vw;
+	}
+
+	.right-wrapper {
+		display: flex;
+		justify-content: flex-end;
+		width: 35vw;
+		.title {
+			font-size: 1.25em;
+			font-family: "Sail", cursive;
+		}
+	}
+}

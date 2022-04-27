@@ -1,1 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Sail&display=swap"); // font-family: 'Sail', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap"); //font-family: 'Sansita Swashed', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Texturina:wght@200&display=swap"); //font-family: 'Texturina', serif;
+
+@import "./variable.scss";
+
 @import "./base.scss";
+@import "./pages/nav.scss";
