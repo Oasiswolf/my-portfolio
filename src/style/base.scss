@@ -1,4 +1,23 @@
 body {
 	margin: 0px;
 	font-family: "Texturina", serif;
+	box-sizing: border-box;
+}
+.app-wrapper {
+	.container {
+		width: 100vw;
+		display: grid;
+		grid-template-columns: 1fr;
+
+		.footer-wrapper {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+
+			.footer {
+				display: flex;
+				align-items: center;
+			}
+		}
+	}
 }

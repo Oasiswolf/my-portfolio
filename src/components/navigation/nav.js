@@ -19,7 +19,7 @@ export default class Navigation extends Component {
 						</NavLink>
 					</div>
 					<div className="nav-link">
-						<NavLink to="/about">About Me</NavLink>
+						<NavLink to="/about">About</NavLink>
 					</div>
 					<div className="nav-link">
 						<NavLink to="/contact">Contact</NavLink>
@@ -32,11 +32,9 @@ export default class Navigation extends Component {
 					</div>
 				</div>
 				<div className="middle-wrapper">
-					<h3>{moment().format("MMMM Do YYYY")}</h3>
+					Today's Date: {moment().format("MMMM Do YYYY")}
 				</div>
-				<div className="right-wrapper">
-					<h1 className="title">Portfolio for Nathan Lamb</h1>
-				</div>
+				<div className="right-wrapper">Nathan Lamb</div>
 			</div>
 		);
 	}

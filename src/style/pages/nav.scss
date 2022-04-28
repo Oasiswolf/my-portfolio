@@ -2,22 +2,22 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 25px;
-	padding: 30px;
-	width: 95vw;
+	height: 10vh;
+	padding: 1.5em;
+	width: calc(100vw - 2.5vw);
+	margin: 0px;
 
 	.left-wrapper {
 		display: flex;
 		// justify-content: space-evenly;
 		align-items: center;
 		gap: 5px;
-		padding: 5px 20px;
-		width: 40vw;
+		width: 15vw;
 
 		.nav-link {
 			font-family: "Sansita Swashed", cursive;
 			font-size: 1.15em;
-			height: 22px;
+			height: 25px;
 			border-bottom: 1px solid transparent;
 
 			a {
@@ -47,16 +47,14 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 20vw;
+		font-size: 1.15em;
+		font-weight: 600;
 	}
 
 	.right-wrapper {
 		display: flex;
 		justify-content: flex-end;
-		width: 35vw;
-		.title {
-			font-size: 1.25em;
-			font-family: "Sail", cursive;
-		}
+		font-size: 1.35em;
+		font-family: "Sansita Swashed", cursive; //"Sail", cursive;
 	}
 }

@@ -56,8 +56,6 @@ export default class PortFolioContainer extends Component {
 		}
 		return (
 			<div>
-				<h2>{this.state.pageTitle}</h2>
-
 				<button onClick={() => this.handleFilter("eCommerce")}>
 					eCommerce
 				</button>
@@ -67,8 +65,9 @@ export default class PortFolioContainer extends Component {
 				<button onClick={() => this.handleFilter("Enterprise")}>
 					Enterprise
 				</button>
-
-				{this.portfolioItems()}
+				<div className="portfolio-items-wrapper">
+					{this.portfolioItems()}
+				</div>
 			</div>
 		);
 	}

@@ -1,25 +1,49 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from "react";
+// import { Link } from "react-router-dom";
 
-export default function portfolio_item(props) {
-	const { id, description, thumb_image_url, logo_url } = props.item;
+export default class PortfolioItem extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			portfolioItemClass: "",
+		};
+	}
+
+	handleMouseOver() {
+		this.setState({
+			portfolioItemClass: "image-blur",
+		});
+	}
+	handleMouseOut() {
+		this.setState({
+			portfolioItemClass: "",
+		});
+	}
+
 	// needed Data: bgImg, logo, description, id
+	render() {
+		const { id, description, thumb_image_url, logo_url } = this.props.item;
 
-	return (
-		<div>
-			<div>
-				<img src={thumb_image_url} alt="bgImg" />
+		return (
+			<div
+				className="portfolio-item-wrapper"
+				onMouseEnter={() => this.handleMouseOver()}
+				onMouseLeave={() => this.handleMouseOut()}>
+				<div
+					className={
+						"portfolio-bgImg " + this.state.portfolioItemClass
+					}
+					style={{ backgroundImage: "url(" + thumb_image_url + ")" }}
+				/>
+
+				<div className="overlay">
+					<div className="logo-wrapper">
+						<img src={logo_url} alt="Logo" />
+					</div>
+					<div className="subtitle">{description}</div>
+				</div>
 			</div>
-
-			<div>
-				<img src={logo_url} alt="Logo" />
-			</div>
-
-			<div>
-				<h3>{description}</h3>
-			</div>
-
-			<Link to={`/detail/${id}`}>Link</Link>
-		</div>
-	);
+		);
+	}
 }

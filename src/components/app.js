@@ -16,7 +16,7 @@ export default class App extends Component {
 
 	render() {
 		return (
-			<div className="app">
+			<div className="container">
 				<Router>
 					<div>
 						<Navigation />
@@ -35,7 +35,13 @@ export default class App extends Component {
 					</div>
 				</Router>
 
-				<h2>The March 7 2022 Class is Awesome!</h2>
+				<div className="footer-wrapper">
+					<div></div>
+					<div className="footer">
+						<h2>The March 7 2022 Class is Awesome!</h2>
+					</div>
+					<div></div>
+				</div>
 			</div>
 		);
 	}
