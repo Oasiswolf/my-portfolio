@@ -1,0 +1,20 @@
+@mixin base-btn {
+	cursor: pointer;
+	height: 42px;
+	font-family: "Sansita Swashed", cursive;
+	font-size: 0.75em;
+	font-weight: 500;
+	border: 1px solid transparent;
+	transition: all 0.5s ease-in-out;
+	background-color: slategray;
+	color: lime;
+
+	&:active,
+	&:focus {
+		outline: none;
+	}
+
+	&:hover {
+		background-color: navy;
+	}
+}

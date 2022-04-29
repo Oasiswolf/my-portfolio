@@ -3,7 +3,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Texturina:wght@200&display=swap"); //font-family: 'Texturina', serif;
 
 @import "./variable.scss";
+@import "./mixins.scss";
 
 @import "./base.scss";
+@import "./button.scss";
 @import "./pages/nav.scss";
 @import "./portfolio/portfolio.scss";

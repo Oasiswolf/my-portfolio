@@ -13,6 +13,9 @@ export default class Navigation extends Component {
 		return (
 			<div className="nav-wrapper">
 				<div className="left-wrapper">
+					Today's Date: {moment().format("MMMM Do YYYY")}
+				</div>
+				<div className="middle-wrapper">
 					<div className="nav-link">
 						<NavLink exact to="/">
 							Home
@@ -30,9 +33,6 @@ export default class Navigation extends Component {
 					<div className="nav-link">
 						{false ? <button>Add Blog</button> : null}
 					</div>
-				</div>
-				<div className="middle-wrapper">
-					Today's Date: {moment().format("MMMM Do YYYY")}
 				</div>
 				<div className="right-wrapper">Nathan Lamb</div>
 			</div>
