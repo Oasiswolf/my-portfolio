@@ -1,0 +1,37 @@
+.auth-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	height: calc(100vh - 84px);
+
+	.left-side {
+		background-size: cover;
+	}
+
+	.right-side {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+}
+
+.login-form {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 5px;
+
+	.inputs {
+		display: flex;
+		flex-direction: column;
+		gap: 3px;
+	}
+
+	.button {
+		.btn {
+			width: 65px;
+			font-size: 1.15rem;
+			padding: 5px;
+		}
+	}
+}
