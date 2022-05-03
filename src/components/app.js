@@ -8,7 +8,8 @@ import About from "./pages/about";
 import Contact from "./pages/contact";
 import Blog from "./pages/blog";
 import Auth from "./auth/auth";
-import PortfolioDetail from "./portfolio-items/portfolio-detail";
+import PortfolioDetail from "./portfolio/portfolio-detail";
+import PortfolioManager from "./portfolio/portfolio-manager";
 import WrongLink from "./pages/wrong-link";
 
 export default class App extends Component {
@@ -55,7 +56,7 @@ export default class App extends Component {
 				if (loggedIn && loggedInStatus === "LOGGED_IN") {
 					return loggedIn;
 				} else if (loggedIn && loggedInStatus === "NOT_LOGGED_IN") {
-					THIS.setState({
+					this.setState({
 						loggedInStatus: "LOGGED_IN",
 					});
 				} else if (!loggedIn && loggedInStatus === "LOGGED_IN") {
@@ -74,7 +75,7 @@ export default class App extends Component {
 	}
 
 	authorizedPages() {
-		return [<Route path="/blog" component={Blog} />];
+		return [<Route path="/portMan" component={PortfolioManager} />];
 	}
 
 	render() {
@@ -101,6 +102,7 @@ export default class App extends Component {
 							/>
 							<Route path="/about" component={About} />
 							<Route path="/contact" component={Contact} />
+							<Route path="/blog" component={Blog} />
 							{this.state.loggedInStatus === "LOGGED_IN"
 								? this.authorizedPages()
 								: null}

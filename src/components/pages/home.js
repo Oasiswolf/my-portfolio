@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import PortFolioContainer from "../portfolio-items/portfolio-container";
+import PortFolioContainer from "../portfolio/portfolio-container";
 
 export default class Home extends Component {
 	render() {

@@ -8,7 +8,7 @@ const Navigation = (props) => {
 	const dynamicLink = (route, linkText) => {
 		return (
 			<div className="nav-link">
-				<NavLink to="/blog">Blog</NavLink>
+				<NavLink to={route}>{linkText}</NavLink>
 			</div>
 		);
 	};
@@ -48,8 +48,11 @@ const Navigation = (props) => {
 				<div className="nav-link">
 					<NavLink to="/contact">Contact</NavLink>
 				</div>
+				<div className="nav-link">
+					<NavLink to="/blog">Blog</NavLink>
+				</div>
 				{props.loginStatus === "LOGGED_IN"
-					? dynamicLink("/blog", "Blog")
+					? dynamicLink("/portMan", "Portfolio Manager")
 					: null}
 				<div className="nav-link">
 					{false ? <button>Add Blog</button> : null}

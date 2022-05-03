@@ -55,6 +55,10 @@
 		display: flex;
 		justify-content: flex-end;
 		font-size: 1.35em;
-		font-family: "Sansita Swashed", cursive; //"Sail", cursive;
+		font-family: "Sansita Swashed", cursive;
+
+		a {
+			cursor: grab;
+		}
 	}
 }
