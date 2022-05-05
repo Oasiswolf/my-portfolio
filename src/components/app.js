@@ -75,7 +75,13 @@ export default class App extends Component {
 	}
 
 	authorizedPages() {
-		return [<Route path="/portMan" component={PortfolioManager} />];
+		return [
+			<Route
+				key="portMan"
+				path="/portMan"
+				component={PortfolioManager}
+			/>,
+		];
 	}
 
 	render() {
