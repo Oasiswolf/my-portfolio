@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { library } from "@fortawesome/fontawesome-svg-core";
+// import { faTrashAlt, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 import Navigation from "./navigation/nav";
 import Home from "./pages/home";
@@ -11,6 +14,8 @@ import Auth from "./auth/auth";
 import PortfolioDetail from "./portfolio/portfolio-detail";
 import PortfolioManager from "./portfolio/portfolio-manager";
 import WrongLink from "./pages/wrong-link";
+
+// library.add(faTrashAlt, faSignOutAlt);
 
 export default class App extends Component {
 	constructor(props) {
@@ -93,7 +98,6 @@ export default class App extends Component {
 							loginStatus={this.state.loggedInStatus}
 							logOut={this.handleSuccessfulLogout}
 						/>
-						<h3>{this.state.loggedInStatus}</h3>
 						<Switch>
 							<Route exact path="/" component={Home} />
 							<Route

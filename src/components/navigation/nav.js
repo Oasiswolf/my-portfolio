@@ -4,6 +4,9 @@ import moment from "moment";
 import axios from "axios";
 import { withRouter } from "react-router";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+
 const Navigation = (props) => {
 	const dynamicLink = (route, linkText) => {
 		return (
@@ -59,10 +62,14 @@ const Navigation = (props) => {
 				</div>
 			</div>
 			<div className="right-wrapper">
-				Nathan Lamb <hr />
-				{props.loginStatus === "LOGGED_IN" ? (
-					<a onClick={handleSignOut}>Sign Out</a>
-				) : null}
+				<div className="name">Nathan Lamb</div>
+				<div className="signout">
+					{props.loginStatus === "LOGGED_IN" ? (
+						<a onClick={handleSignOut}>
+							<FontAwesomeIcon icon={faSignOutAlt} />
+						</a>
+					) : null}
+				</div>
 			</div>
 		</div>
 	);

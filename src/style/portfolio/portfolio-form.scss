@@ -1,0 +1,46 @@
+.portfolio-form {
+	display: grid;
+	grid-template-columns: 1fr;
+	padding: 42px;
+
+	@include form-inputs();
+
+	input {
+		margin-bottom: 5px;
+	}
+
+	.select-area {
+		height: 8.5vh;
+		width: 100%;
+		font-size: 1.1em;
+		border-radius: 5px;
+		outline: none;
+		border: 1px solid darkmagenta;
+		overflow: hidden;
+		background-color: transparent;
+		color: navy;
+	}
+
+	textarea {
+		border: 1px solid darkmagenta;
+		background-color: transparent;
+		font-size: 1rem;
+		height: 100px;
+		outline: none;
+		padding: 10px;
+		width: 96.5%;
+		resize: none;
+		margin-bottom: 10px;
+	}
+
+	.img-uploader {
+		display: grid;
+		grid-template-columns: 25% 25% 25%;
+		gap: 21px;
+		margin-bottom: 5px;
+	}
+	button {
+		width: 10vw;
+		font-size: 1.25em;
+	}
+}

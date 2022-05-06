@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt, faFileEdit } from "@fortawesome/free-solid-svg-icons";
 
 export default function PortfolioSidebar(props) {
 	const portfolioList = props.data.map((portfolioItem) => {
@@ -10,8 +12,15 @@ export default function PortfolioSidebar(props) {
 						alt="Background Image"
 					/>
 				</div>
-				<h1 className="title">{portfolioItem.name}</h1>
-				<h1>{portfolioItem.id}</h1>
+				<div className="text-icon">
+					<div className="title">{portfolioItem.name}</div>
+					<a onClick={() => props.edit(portfolioItem)}>
+						<FontAwesomeIcon icon={faFileEdit} />
+					</a>
+					<a onClick={() => props.deleteClick(portfolioItem)}>
+						<FontAwesomeIcon icon={faTrashAlt} />
+					</a>
+				</div>
 			</div>
 		);
 	});

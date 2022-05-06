@@ -18,3 +18,37 @@
 		background-color: navy;
 	}
 }
+
+@mixin form-inputs {
+	input {
+		font-family: "Texturina", serif;
+		color: navy;
+		padding: 5px 0px;
+		background-color: transparent;
+		border-top: 0px;
+		border-right: 0px;
+		border-left: 0px;
+		border-bottom: 1px solid darkmagenta;
+		width: 100%; //calc(100vw - 30vw);
+		transition: 0.5s all ease-in-out;
+		font-size: 1.1em;
+		margin-bottom: 21px;
+
+		&:focus {
+			outline: none;
+			border-bottom: 1px solid navy;
+		}
+	}
+}
+
+.one-column {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 21px;
+}
+
+.two-column {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 21px;
+}

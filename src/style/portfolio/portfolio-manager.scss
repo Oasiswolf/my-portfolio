@@ -6,9 +6,6 @@
 
 	.left-side {
 		background-color: lightblue;
-
-		.add-manager {
-		}
 	}
 
 	.right-side {
@@ -23,12 +20,30 @@
 		padding: 22px;
 		.sidebar-bgimg {
 			img {
-				width: 100%;
+				width: 22vw;
+				height: 50vh;
 			}
 		}
+		.text-icon {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 2.5px;
+			.title {
+				color: lime;
+				font-size: 1.45em;
+			}
 
-		.title {
-			color: lime;
+			a {
+				color: lime;
+				font-size: 1.35em;
+				transition: 0.5s ease-in-out;
+
+				&:hover {
+					color: red;
+					font-size: 1.5em;
+				}
+			}
 		}
 	}
 }
