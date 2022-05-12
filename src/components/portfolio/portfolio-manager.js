@@ -17,6 +17,14 @@ export default class PortfolioManager extends Component {
 		this.handleBadFormSubmit = this.handleBadFormSubmit.bind(this);
 		this.handleDeleteClick = this.handleDeleteClick.bind(this);
 		this.handleEditClick = this.handleEditClick.bind(this);
+		this.clearEditPortfolio = this.clearEditPortfolio.bind(this);
+		this.handleEditFormSubmit = this.handleEditFormSubmit.bind(this);
+	}
+
+	clearEditPortfolio() {
+		this.setState({
+			portfolioEdit: {},
+		});
 	}
 
 	handleEditClick(portfolioItem) {
@@ -42,6 +50,10 @@ export default class PortfolioManager extends Component {
 			.catch((error) => {
 				console.log("error Deleting Post:", error);
 			});
+	}
+
+	handleEditFormSubmit() {
+		this.getPortfolioItems();
 	}
 
 	handleGoodFormSubmit(portfolioItem) {
@@ -79,7 +91,10 @@ export default class PortfolioManager extends Component {
 				<div className="left-side">
 					<PortfolioForm
 						goodSubmit={this.handleGoodFormSubmit}
+						editSubmit={this.handleEditFormSubmit}
 						badSubmit={this.handleBadFormSubmit}
+						clear={this.clearEditPortfolio}
+						portEdit={this.state.portfolioEdit}
 					/>
 				</div>
 

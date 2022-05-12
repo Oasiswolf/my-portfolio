@@ -1,0 +1,42 @@
+.blog-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.loader {
+		font-size: 1.25rem;
+		color: navy;
+		transition: 1s ease-in-out;
+		&:hover {
+			color: red;
+		}
+	}
+
+	.content-wrap {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 800px;
+
+		a {
+			text-decoration: none;
+			color: navy;
+			transition: 0.5s ease-in-out;
+
+			&:hover {
+				color: lime;
+				font-size: 1.05em;
+			}
+		}
+
+		.img-wrap {
+			img {
+				margin: 15px 0px;
+				width: 100%;
+				height: 350px;
+				border-radius: 6px;
+				object-fit: cover;
+			}
+		}
+	}
+}
