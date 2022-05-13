@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpider } from "@fortawesome/free-solid-svg-icons";
 
 import BlogItem from "../blog/blog-item";
+import BlogModal from "../blog/blog-modal";
 
 export default class Blog extends Component {
 	constructor() {
@@ -15,10 +16,25 @@ export default class Blog extends Component {
 			totalCount: 0,
 			currentPage: 0,
 			isLoading: true,
+			modalIsOpen: false,
 		};
 		this.getBlogItems = this.getBlogItems.bind(this);
 		this.onScroll = this.onScroll.bind(this);
 		window.addEventListener("scroll", this.onScroll, false);
+		this.handleNewBlog = this.handleNewBlog.bind(this);
+		this.handleModalClose = this.handleModalClose.bind(this);
+	}
+
+	handleModalClose() {
+		this.setState({
+			modalIsOpen: false,
+		});
+	}
+
+	handleNewBlog() {
+		this.setState({
+			modalIsOpen: true,
+		});
 	}
 
 	onScroll() {
@@ -83,6 +99,13 @@ export default class Blog extends Component {
 		});
 		return (
 			<div className="blog-container">
+				<div className="modalDiv">
+					<a onClick={this.handleNewBlog}>New Blog</a>
+				</div>
+				<BlogModal
+					openModal={this.state.modalIsOpen}
+					closeModal={this.handleModalClose}
+				/>
 				<div className="content-wrap">{blogRecords}</div>
 				{this.state.isLoading ? (
 					<div className="loader">
