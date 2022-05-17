@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpider } from "@fortawesome/free-solid-svg-icons";
+import { faSpider, faHeartCirclePlus } from "@fortawesome/free-solid-svg-icons";
 
 import BlogItem from "../blog/blog-item";
 import BlogModal from "../blog/blog-modal";
 
 export default class Blog extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 
 		this.state = {
 			blogItems: [],
@@ -23,6 +23,14 @@ export default class Blog extends Component {
 		window.addEventListener("scroll", this.onScroll, false);
 		this.handleNewBlog = this.handleNewBlog.bind(this);
 		this.handleModalClose = this.handleModalClose.bind(this);
+		this.handleNewBlogPost = this.handleNewBlogPost.bind(this);
+	}
+
+	handleNewBlogPost(blog) {
+		this.setState({
+			modalIsOpen: false,
+			blogItems: [blog].concat(this.state.blogItems),
+		});
 	}
 
 	handleModalClose() {
@@ -99,12 +107,21 @@ export default class Blog extends Component {
 		});
 		return (
 			<div className="blog-container">
-				<div className="modalDiv">
-					<a onClick={this.handleNewBlog}>New Blog</a>
-				</div>
+				{this.props.login === "LOGGED_IN" ? (
+					<div className="modalDiv">
+						<a onClick={this.handleNewBlog}>
+							<FontAwesomeIcon
+								icon={faHeartCirclePlus}
+								beat
+								speed={2}
+							/>
+						</a>
+					</div>
+				) : null}
 				<BlogModal
 					openModal={this.state.modalIsOpen}
 					closeModal={this.handleModalClose}
+					newBlog={this.handleNewBlogPost}
 				/>
 				<div className="content-wrap">{blogRecords}</div>
 				{this.state.isLoading ? (

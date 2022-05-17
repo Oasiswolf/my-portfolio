@@ -17,6 +17,7 @@ export default class BlogModal extends Component {
 				marginRight: "-50%",
 				transform: "translate(-50%, -50%)",
 				width: "800px",
+				height: "80%",
 			},
 			overlay: {
 				backgroundColor: "rgba(1,1,1,0.75)",
@@ -27,7 +28,7 @@ export default class BlogModal extends Component {
 	}
 
 	handleGoodSubmit(blog) {
-		console.log("BlogFormSubmission", blog);
+		this.props.newBlog(blog);
 	}
 
 	render() {
@@ -39,7 +40,6 @@ export default class BlogModal extends Component {
 					console.log("Modal wants to Close Please!");
 					this.props.closeModal();
 				}}>
-				<h1>Modal Opened Again</h1>
 				<BlogForm formSubmit={this.handleGoodSubmit} />
 			</ReactModal>
 		);

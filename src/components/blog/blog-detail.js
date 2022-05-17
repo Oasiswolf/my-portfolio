@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
+import ReactHtmlParser from "react-html-parser";
+
+import BlogImg from "./blogImg";
+import BlogForm from "./blog-form";
 
 export default class BlogDetail extends Component {
 	constructor(props) {
@@ -8,7 +12,15 @@ export default class BlogDetail extends Component {
 		this.state = {
 			currentId: this.props.match.params.slug,
 			blogItem: {},
+			editMode: false,
 		};
+
+		this.handleEdit = this.handleEdit.bind(this);
+	}
+
+	handleEdit() {
+		console.log("edit enabled:");
+		this.setState({});
 	}
 
 	getBlogItem() {
@@ -33,17 +45,23 @@ export default class BlogDetail extends Component {
 	render() {
 		const { title, content, featured_image_url, blog_status } =
 			this.state.blogItem;
-		return (
-			<div className="blog-container">
-				<div className="content-wrap">
-					<h3>{title}</h3>
-					<div className="img-wrap">
-						<img src={featured_image_url} />
+		const contentManager = () => {
+			if (this.state.editMode) {
+				return <BlogForm />;
+			} else {
+				return (
+					<div className="content-wrap">
+						<h3>{title}</h3>
+						<BlogImg img={featured_image_url} />
+						<div className="content">
+							{ReactHtmlParser(content)}
+						</div>
+						{blog_status}
 					</div>
-					<div className="content">{content}</div>
-					{blog_status}
-				</div>
-			</div>
-		);
+				);
+			}
+		};
+
+		return <div className="blog-container">{contentManager()}</div>;
 	}
 }

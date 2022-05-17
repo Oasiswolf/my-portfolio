@@ -2,14 +2,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap"); //font-family: 'Sansita Swashed', cursive;
 @import url("https://fonts.googleapis.com/css2?family=Texturina:wght@200&display=swap"); //font-family: 'Texturina', serif;
 
-@import "./variable.scss";
-@import "./mixins.scss";
+@import "./mixin&variables/variable.scss";
+@import "./mixin&variables/mixins.scss";
 
 @import "./base.scss";
-@import "./button.scss";
+@import "./mixin&variables/button.scss";
 @import "./pages/nav.scss";
 @import "./portfolio/portfolio.scss";
 @import "./auth.scss";
 @import "./portfolio/portfolio-manager.scss";
 @import "./portfolio/portfolio-form.scss";
 @import "./blog/blog.scss";
+@import "./react-draft-wysiwyg.scss";
